@@ -1,0 +1,113 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <!-- Heading -->
+    <TextView
+        android:id="@+id/headingTextView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentTop="true"
+        android:layout_centerHorizontal="true"
+        android:padding="16dp"
+        android:text="QR Code Scanner"
+        android:textSize="24sp"
+        android:textColor="@android:color/black"
+        android:textStyle="bold" />
+
+    <!-- Scanning Area with Border -->
+    <FrameLayout
+        android:id="@+id/scanningArea"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_margin="16dp"
+        android:layout_below="@id/headingTextView"
+        android:layout_above="@id/footerTextView"
+        android:layout_centerInParent="true"
+        tools:ignore="NotSibling">
+
+        <SurfaceView
+            android:id="@+id/cameraView"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent" />
+
+        <!-- Border around the scanning area -->
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="@drawable/scanning_border" />
+
+        <!-- Scanning message -->
+        <TextView
+            android:id="@+id/scanningMessage"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:text="@string/scanning_message"
+            android:textColor="@android:color/white"
+            android:textSize="24sp"
+            android:visibility="gone" />
+
+        <!-- Overlay for Magnifying Glass -->
+        <View
+            android:id="@+id/overlay"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="#80000000"
+            android:visibility="gone" />
+
+        <!-- Magnifying Glass Button -->
+        <ImageButton
+            android:id="@+id/magnifyingGlassButton"
+            android:layout_width="135dp"
+            android:layout_height="127dp"
+            android:layout_marginStart="200dp"
+            android:layout_marginLeft="16dp"
+            android:layout_marginTop="290dp"
+            android:layout_marginEnd="16dp"
+            android:layout_marginRight="16dp"
+            android:layout_marginBottom="16dp"
+            android:background="@android:color/transparent"
+            android:src="@drawable/ic_magnifying_glass"
+            android:contentDescription="@string/magnifying_glass_description" />
+
+        <!-- Footer TextView -->
+        <TextView
+            android:id="@+id/footerTextView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentBottom="true"
+            android:layout_alignParentStart="true"
+            android:padding="16dp"
+            android:text="@string/footer_text"
+            android:textColor="@android:color/black"
+            android:textSize="14sp" />
+
+    </FrameLayout>
+
+    <!-- Result TextView -->
+    <TextView
+        android:id="@+id/resultTextView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/scanningArea"
+        android:layout_centerHorizontal="true"
+        android:padding="16dp"
+        android:textSize="18sp"
+        android:textColor="@android:color/white"
+        android:visibility="gone" />
+
+    <!-- Action Button (Open URL) -->
+    <Button
+        android:id="@+id/actionButton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentBottom="true"
+        android:layout_margin="16dp"
+        android:text="Open URL"
+        android:visibility="gone" />
+
+</RelativeLayout>

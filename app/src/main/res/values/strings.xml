@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!-- App Name -->
+    <string name="app_name">QR Code Scanner</string>
+
+    <!-- Magnifying Glass Description -->
+    <string name="magnifying_glass_description">Magnifying Glass</string>
+
+    <!-- Scanning Message -->
+    <string name="scanning_message">Scanning...</string>
+
+    <!-- Error Message for Non-URL Content -->
+    <string name="error_non_url">Scanned content is not a URL.</string>
+
+    <!-- Permission Denied Message -->
+    <string name="permission_denied">Camera permission denied</string>
+
+    <!-- Footer Text -->
+    <string name="footer_text">Created by Saptarshi</string>
+</resources>
